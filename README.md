@@ -19,3 +19,18 @@ project-root/
 ├── main.py # Flask application
 ├── users.json # Optional (used for JSON-based persistence)
 └── README.md # Project documentation
+
+# Create a user
+curl -X POST http://127.0.0.1:5000/users -H "Content-Type: application/json" -d "{\"id\": 1, \"name\": \"Alice\", \"email\": \"alice@example.com\"}"
+
+# Get all users
+curl http://127.0.0.1:5000/users
+
+# Get user by ID
+curl http://127.0.0.1:5000/users/1
+
+# Update user
+curl -X PUT http://127.0.0.1:5000/users/1 -H "Content-Type: application/json" -d "{\"name\": \"Alice Updated\"}"
+
+# Delete user
+curl -X DELETE http://127.0.0.1:5000/users/1
